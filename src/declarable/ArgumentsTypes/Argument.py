@@ -41,9 +41,3 @@ class Argument:
         if __assertion != None:
             if __assertion.get("not_null") == True:
                 assert got_value != None, f"{__name} not passed"
-
-            if __assertion.get("assert_link") != None:
-                new_param_name = __assertion.get("assert_link")
-                new_param_object = self.comparing.get(new_param_name)
-
-                assert got_value != None or self.args.get(new_param_name, new_param_object.get("default")) != None, f"{new_param_name} or {__name} not passed"

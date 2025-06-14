@@ -11,7 +11,7 @@ class ExtractStrategy(Runnable, Saveable):
     def preExtract(self, i = {}):
         self.buffer['args'] = i
 
-    def extractWheel(self):
+    def extractWheel(self, i = {}):
         raise AbstractClassException("This is abstract representation")
 
     async def extract(self, i = {}):

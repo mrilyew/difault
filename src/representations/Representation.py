@@ -13,7 +13,7 @@ class Representation(RecursiveDeclarable, Runnable):
 
     @classmethod
     async def extract(cls, i: dict = {})->dict:
-        if cls.Extractor == None:
+        if getattr(cls, 'Extractor', None) == None:
             raise AbstractClassException('ExecutableStrategy is not implemented at this class')
 
         strategy = cls.Extractor(cls)

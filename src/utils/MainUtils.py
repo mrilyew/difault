@@ -228,15 +228,15 @@ def replace_link_gaps(input_data, link_to_linked_files, recurse_level = 0):
         return [replace_link_gaps(item, link_to_linked_files) for item in input_data]
     elif isinstance(input_data, str):
         try:
-            if "__$|ContentUnit_" in input_data:
-                got_id = int(input_data.replace("__$|ContentUnit_", ""))
+            if "__$|cu_" in input_data:
+                got_id = int(input_data.replace("__$|cu_", ""))
                 for linked in link_to_linked_files:
                     if linked.id == got_id and linked.self_name == "ContentUnit":
                         return linked.getFormattedInfo(recursive=True,recurse_level=recurse_level+1)
                     else:
                         return input_data
-            elif "__$|file_" in input_data:
-                got_id = int(input_data.replace("__$|file_", ""))
+            elif "__$|su_" in input_data:
+                got_id = int(input_data.replace("__$|su_", ""))
                 for linked in link_to_linked_files:
                     if linked.id == got_id and linked.self_name == "StorageUnit":
                         return linked.getFormattedInfo(recursive=True,recurse_level=recurse_level+1)

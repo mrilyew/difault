@@ -35,6 +35,8 @@ Look at [docs](docs/ru/README.md)
 ### Репрезентации
 
 - [x] Разделить representation и strategy
+- [ ] Post-execute действия (?)
+- [ ] file_containment (?)
 
 ### Инциализация
 
